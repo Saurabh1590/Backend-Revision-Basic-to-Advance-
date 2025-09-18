@@ -11,17 +11,16 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-if(!fs.existsSync(path.join(__dirname , "logs"))){
-    fs.mkdirSync(path.join(__dirname , "logs"))
+if (!fs.existsSync(path.join(__dirname, "logs"))) {
+  fs.mkdirSync(path.join(__dirname, "logs"));
 }
 
 app.use(express.json());
 
 app.use(logMiddleware);
 
-app.use("/public",publicRoutes);
-app.use("/private",privateRoutes);
+app.use("/public", publicRoutes);
+app.use("/private", privateRoutes);
 
 const PORT = 8000;
 

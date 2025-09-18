@@ -9,9 +9,9 @@ router.get("/", (req, res) => {
 
 router.get("/generate-token", (req, res) => {
   const token = generateToken();
-  res.status(200).send({  
+  res.status(200).send({
     message: "Token generated successfully",
-    token: token
+    token: token,
   });
 });
 
